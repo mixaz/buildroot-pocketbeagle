@@ -6,6 +6,9 @@ BOARD_DIR="$(dirname $0)"
 # copy the uEnv.txt to the output/images directory
 cp board/pocketbeagle/uEnv.txt $BINARIES_DIR/uEnv.txt
 
+cp board/pocketbeagle/leptonpru-00A0.dtbo $BINARIES_DIR/
+cp board/pocketbeagle/AM335X-PRU-RPROC-4-14-TI-00A0.dtbo $BINARIES_DIR/
+
 GENIMAGE_CFG="${BOARD_DIR}/genimage.cfg"
 GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 
