@@ -7,13 +7,13 @@ OLDPWD=$(pwd)
 
 printf "Starting USB gadget: "
 
-modprobe cppi41
+#modprobe cppi41
 modprobe musb-am335x
 modprobe musb-dsps
 modprobe phy-am335x
 modprobe libcomposite
 
-mkdir /config
+mkdir /config || true
 mount -t configfs none /config
 mkdir ${GADGET_DIR}
 cd ${GADGET_DIR}
