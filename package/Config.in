@@ -1,5 +1,6 @@
 menu "Target packages"
 
+	source "package/farrowapp/Config.in"
 	source "package/busybox/Config.in"
 	source "package/skeleton/Config.in"
 	source "package/skeleton-custom/Config.in"
