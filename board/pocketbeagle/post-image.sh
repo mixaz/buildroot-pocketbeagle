@@ -20,3 +20,7 @@ genimage \
     --inputpath "${BINARIES_DIR}" \
     --outputpath "${BINARIES_DIR}" \
     --config "${GENIMAGE_CFG}"
+
+rm $BINARIES_DIR/sdcard.img.xz
+
+xz -zkT 0 $BINARIES_DIR/sdcard.img
