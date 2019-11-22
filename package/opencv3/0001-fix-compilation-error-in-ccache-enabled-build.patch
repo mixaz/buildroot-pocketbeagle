@@ -1,0 +1,27 @@
+From f70f675eee053f8ebc9784fa09101f72a67060c0 Mon Sep 17 00:00:00 2001
+From: Mikhail Zemlyanukha <gmixaz@gmail.com>
+Date: Fri, 22 Nov 2019 19:41:12 +0300
+Subject: [PATCH] fix compilation error in ccache enabled build
+
+---
+ cmake/OpenCVCompilerOptions.cmake | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cmake/OpenCVCompilerOptions.cmake b/cmake/OpenCVCompilerOptions.cmake
+index 5bb0479113..4f373a7514 100644
+--- a/cmake/OpenCVCompilerOptions.cmake
++++ b/cmake/OpenCVCompilerOptions.cmake
+@@ -18,8 +18,8 @@ if(ENABLE_CCACHE AND NOT CMAKE_COMPILER_IS_CCACHE)
+         message(STATUS "Unable to compile program with enabled ccache, reverting...")
+         set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${__OLD_RULE_LAUNCH_COMPILE}")
+       endif()
+-    else()
+-      message(STATUS "Looking for ccache - not found")
++#    else()
++#      message(STATUS "Looking for ccache - not found")
+     endif()
+   endif()
+ endif()
+-- 
+2.23.0
+
